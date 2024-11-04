@@ -9,14 +9,6 @@ export const SEARCH_ENGINES: Record<
     name: 'Google',
     url: 'https://www.google.com/search?q={}',
   },
-  duckduckgo: {
-    name: 'DuckDuckGo',
-    url: 'https://duckduckgo.com/?q={}',
-  },
-  'searx.be': {
-    name: 'Searx.be',
-    url: 'https://searx.be/?q={}',
-  },
   custom: {
     name: 'Custom',
     url: '',

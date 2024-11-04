@@ -1,5 +1,5 @@
 import React from 'react'
-import { RiOpenaiFill, RiSearch2Line } from 'react-icons/ri'
+import { RiLoaderLine, RiOpenaiFill, RiSearch2Line } from 'react-icons/ri'
 
 import IconTab, { IconTabItem } from '@components/IconTab'
 
@@ -7,12 +7,16 @@ import * as Styled from './SearchBar.styled'
 import useAppStore from '@stores/app'
 import { SEARCH_ENGINES } from '@constants/searchEngines'
 
-type QueryMode = 'websearch' | 'chatgpt'
+type QueryMode = 'websearch' | 'claude' | 'chatgpt'
 
 const SEARCH_ENGiNE_ITEMS: IconTabItem<QueryMode>[] = [
   {
     value: 'websearch',
     icon: RiSearch2Line,
+  },
+  {
+    value: 'claude',
+    icon: RiLoaderLine,
   },
   {
     value: 'chatgpt',
@@ -22,6 +26,7 @@ const SEARCH_ENGiNE_ITEMS: IconTabItem<QueryMode>[] = [
 
 const PLACEHOLDER_TEXT: Record<QueryMode, string> = {
   websearch: 'Search the web...',
+  claude: 'Ask Claude...',
   chatgpt: 'Ask ChatGPT...',
 }
 
@@ -39,6 +44,11 @@ function SearchBar() {
 
     if (queryMode === 'chatgpt') {
       location.href = `https://chat.openai.com/?q=${query}`
+      return
+    }
+
+    if (queryMode === 'claude') {
+      location.href = `https://claude.ai/chat?q=${query}`
       return
     }
 

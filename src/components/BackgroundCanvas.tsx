@@ -12,7 +12,7 @@ function BackgroundCanvas() {
   const dimmingAmount = useAppStore((store) => store.dimmingAmount)
   const blurAmount = useAppStore((store) => store.blurAmount)
   const backgroundImage =
-    useAppStore((store) => store.backgroundImage) ?? '/img.png'
+    useAppStore((store) => store.backgroundImage) ?? '/img.avif'
 
   const setIsReady = useSessionAppStore((store) => store.setIsReady)
 

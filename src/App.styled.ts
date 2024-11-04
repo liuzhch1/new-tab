@@ -32,7 +32,7 @@ export const Content = styled.div<{ isReady: boolean }>`
   align-items: center;
 
   position: fixed;
-  top: 0;
+  top: -170px;
   left: 0;
 
   opacity: ${({ isReady }) => (isReady ? 1 : 0)};
@@ -40,7 +40,7 @@ export const Content = styled.div<{ isReady: boolean }>`
   transition: opacity 1s;
 
   @supports (height: 100svh) {
-    height: 100svh;
+    height: 120svh;
   }
 
   @supports not (height: 100svh) {

@@ -51,7 +51,7 @@ const useAppStore = create(
       dimmingAmount: 0.5,
       setDimmingAmount: (dimmingAmount: number) => set({ dimmingAmount }),
 
-      blurAmount: 4,
+      blurAmount: 2,
       setBlurAmount: (blurAmount: number) => set({ blurAmount }),
 
       isPropertyChanging: false,
